@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Prediksi Kelulusan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #34495e;
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #2e86de;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1b4f72;
+        }
+
+        .hasil {
+            margin-top: 25px;
+            padding: 15px;
+            background: #eef6ff;
+            border-left: 5px solid #2e86de;
+            border-radius: 6px;
+        }
+
+        .hasil h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .hasil p {
+            color: #333;
+            font-size: 15px;
+        }
+
+        .info {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Dashboard Prediksi Kelulusan Mahasiswa</h2>
+
+        <form action="/predict" method="post">
+            <label>Tahun Masuk</label>
+            <input type="number" name="tahun_masuk" placeholder="Contoh: 2019" required>
+
+            <label>Bulan Lulus</label>
+            <input type="number" name="bulan_lulus" placeholder="Contoh: 7" required>
+
+            <label>IPK</label>
+            <input type="number" step="0.01" name="ipk" placeholder="Contoh: 3.50" required>
+
+            <label>Jumlah MK Gagal</label>
+            <input type="number" name="jumlah_mk_gagal" placeholder="Contoh: 1" required>
+
+            <label>SKS Lulus</label>
+            <input type="number" name="sks_lulus" placeholder="Contoh: 140" required>
+
+            <label>Status Skripsi</label>
+            <input type="number" name="status_skripsi" placeholder="0-4" required>
+            <div class="info">0=Belum, 1=Judul ACC, 2=Sempro, 3=Semhas, 4=Selesai</div>
+
+            <label>Jumlah Bimbingan</label>
+            <input type="number" name="jumlah_bimbingan" placeholder="Contoh: 12" required>
+
+            <button type="submit">Prediksi</button>
+        </form>
+
+</body>
+</html>

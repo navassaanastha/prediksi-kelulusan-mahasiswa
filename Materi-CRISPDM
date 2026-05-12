@@ -1,0 +1,93 @@
+Studi Kasus - Prediksi Kelulusan Tepat Waktu
+- metodologi (Tahapan & Alur) 
+	- CRISP-DM (Cross-Industry Standard Process for Data Mining)
+	- AI / Machine Learning LifeCycle
+	
+Business Understanding 
+- Si = mhs banyak tiap angkatan, dan banyak mhs lulus tidak tepat waktu => masalah potensi kualitas menurun (DO, proses ujian skripsi)
+- Solusi : 
+	- Prediksi mhs lulus tepat waktu
+	- Mengidentifikasi faktor penyebab keterlambatan (lulus tidak tepat waktu)
+	- Mendukung pengambil keputusan pimpinan
+	- Deteksi lebih awal ketika ada kondisi anomali 
+
+Data Understanding
+	- Identifikasi struktur dataset
+	- Identifikasi Fitur (Feature) / Kriteria (x) dan target/label (y) 
+		Target (label)
+			- Ontime = 1 <= 4 Tahun
+			- Ontime = 0 > 4 Tahun
+		- Fiturnya (Kriteria) (History)
+			- Tahun masuk
+			- Bulan Lulus*
+			- IPK / IPS 
+			- Jml MK gagal 
+			- SKS lulus
+			- Status Skripsi (Judulacc, Sempro, semhas, skripsi), Blm 0
+			- Jumlah bimbingan 
+			
+	- Analisis distribusi data
+	- Rule-Based System 
+		- Ontime = 1 <= 4 Tahun
+			- IPK >=3.00
+			- MK Gagal <=2 / SKS / IP rata2
+			- Jml bimbingan >10
+			- status skripsi < 7
+			
+Data Preparation
+	- Data Cleaning (Hapus missing value, hapus duplikasi, samakan format data)
+	- Data Transformation
+		- Encoding data data kategorikal 
+		- Normalisasi jika perlu
+	- Feature Engineering
+		Buat Fitur baru
+			- Rata IP
+			- Progress Skripsi / SKS
+			- Tren IP
+	- Feature Selection
+		- Fitur Relevan
+		- Hindari data Leakage (data yg seharusnya tidak digunakan) 
+			- tanggal lulus
+			- lulus / tidak lulus
+			
+Modeling (Machine Learning) 
+	- Algoritma Prediksi (regresi linier, random forest, dll )
+	- Cara Kerja algoritma (Library)
+	- Proses modeling
+		- Split Data
+			- Training (80%) 
+			- Testing (20%)
+		- Training Model / Model AI
+		- Prediksi (data testing / Data Real)
+
+Evaluation
+	- Metode Evaluasi
+		- Accuracy
+		- Precision
+		- Recall
+		- Confusion matrix
+	- Analisis 
+		- Apakah Training Model / model AI sudah Akurat?
+		- Apakah Model Bias (salah baca pola)
+		- Apakah model masuk akal 
+	- Insight / Informasi 
+		- Faktor / Kriteria yang paling berpengaruh (MK gagal, Status Skripsi)
+		- Pola mahasiswa beresiko
+		
+Deploymment
+	Betuk Sistem 
+	- Dashboard monitoring mahasiswa
+	- system ealy warning
+	- Fitur / menu prediksi
+	
+	Output
+	- Daftar mhs beresiko
+	- rekomendasi tindakan 
+	
+	User 
+	- Pimpinan (Rektor, Fakultas, Kaprodi)
+	- Mahasiswa
+		
+		
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Hasil Prediksi</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f6f9;
+        }
+
+        .container{
+            width:500px;
+            margin:60px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        h2{
+            color:#2c3e50;
+        }
+
+        .hasil{
+            margin-top:20px;
+            padding:20px;
+            background:#eef6ff;
+            border-radius:8px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 20px;
+            background:#3498db;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Hasil Prediksi Kelulusan</h2>
+
+    <div class="hasil">
+
+        <h3>{{ hasil_prediksi }}</h3>
+
+        <p>{{ rekomendasi }}</p>
+
+    </div>
+
+    <a href="/" class="btn">
+        Kembali
+    </a>
+
+</div>
+
+</body>
+</html>
